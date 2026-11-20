@@ -7,6 +7,7 @@ var dock: Control
 func _enter_tree() -> void:
 	dock = DOCK_SCRIPT.new()
 	dock.name = "ARNIX AI"
+	dock.set_editor_interface(get_editor_interface())
 	add_control_to_dock(DOCK_SLOT_RIGHT_UL, dock)
 
 func _exit_tree() -> void:
