@@ -221,11 +221,11 @@ func _apply_pending() -> void:
 		pending_changes.clear()
 		preview_box.text = ""
 		_save_settings()
-		get_editor_interface().get_resource_filesystem().scan()
+		EditorInterface.get_resource_filesystem().scan()
 
 func _undo_last_change() -> void:
 	if change_manager.restore_last_backup():
-		get_editor_interface().get_resource_filesystem().scan()
+		EditorInterface.get_resource_filesystem().scan()
 		_log("Последнее изменение отменено из резервной копии.")
 
 func _discard_pending() -> void:
@@ -238,7 +238,7 @@ func _scan_project() -> void:
 	_log("Сканирование завершено. Найдено текстовых файлов: %d. Godot: %s" % [context.files.size(), str(context.godot_version)])
 
 func _run_project() -> void:
-	get_editor_interface().play_main_scene()
+	EditorInterface.play_main_scene()
 	_log("Запрошен запуск главной сцены. Сообщения выполнения смотрите в панели Output/Debugger Godot.")
 
 func _on_changes_applied(count: int, backup_folder: String) -> void:
