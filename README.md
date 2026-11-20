@@ -1,4 +1,4 @@
-# ARNIX AI Developer 0.2.1
+# ARNIX AI Developer 0.2.2
 
 AI coding assistant dock for the Godot 4 Android Editor. The plugin reads project text files, sends a task plus context to an OpenAI-compatible chat-completions API, stages complete-file edits, checks changed GDScript syntax, creates backups, and applies the edits.
 
@@ -10,6 +10,10 @@ AI coding assistant dock for the Godot 4 Android Editor. The plugin reads projec
 4. Open the ARNIX AI dock, tap ⚙, enter an OpenAI-compatible API URL, your own API key, and a model ID. Save.
 
 The addon is a normal Godot editor plugin; it is not an APK and cannot be installed from Android Settings.
+
+## Fixed in 0.2.2
+
+- Fixed editor-interface access from the dock: the `EditorPlugin` now passes its `EditorInterface` reference to the dock, so the dock no longer calls `get_editor_interface()` on a `VBoxContainer`.
 
 ## Features
 
