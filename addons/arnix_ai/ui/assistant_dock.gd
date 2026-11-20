@@ -21,6 +21,10 @@ var conversation_history: Array[String] = []
 var preview_box: TextEdit
 var repair_attempts := 0
 var busy_label: Label
+var editor_interface
+
+func set_editor_interface(value) -> void:
+	editor_interface = value
 
 func _ready() -> void:
 	custom_minimum_size = Vector2(300, 420)
